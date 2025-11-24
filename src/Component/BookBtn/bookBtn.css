@@ -1,0 +1,20 @@
+.myTripBtn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.myTripBtn:hover {
+    transform: translateY(-5px);
+    /* buton hereketi ucun */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    color: #fff;
+}

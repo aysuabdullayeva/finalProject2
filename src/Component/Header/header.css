@@ -1,0 +1,106 @@
+header {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.headerContainer {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li a {
+    position: relative;
+    color: #000;
+    font-size: 19px;
+    transition: color 0.7s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #0072ff, #ff6600);
+    transition: width 0.7s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+    font-size: 19px;
+}
+
+nav ul li:hover {
+    a {
+        color: blue;
+        transition: 0.5s;
+    }
+}
+
+.rightHeader {
+    display: flex;
+    width: 150px;
+    font-size: 20px;
+    justify-content: space-between;
+
+    svg {
+        font-size: 25px;
+    }
+
+    svg:hover {
+        cursor: pointer;
+        color: blue;
+        transition: 0.4s;
+    }
+
+
+    .wishlist,
+    .addtocard {
+        position: relative;
+
+    }
+
+    .count {
+        position: absolute;
+        right: -12px;
+        color: white;
+        border-radius: 50%;
+        padding: 3px;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 600;
+        background: linear-gradient(135deg, #ff7d47, #ffb17a);
+        top: -12px;
+        /* backdrop-filter: blur(6px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3); */
+    }
+}
+
+
+
+
+
+
+
+/* .logout {
+    display: none;
+} */
+
+
+/* sing in = log in */
+/* sign up = register */

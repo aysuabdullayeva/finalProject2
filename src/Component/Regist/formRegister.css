@@ -1,0 +1,63 @@
+.planTrip {
+    /* background-color: black; */
+    margin-bottom: 28px;
+    
+    .planForm {
+        background: linear-gradient(0deg, #ff7e5f, #feb47b);
+        color: black;
+        width: 50%;
+        margin: auto;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        .error-title {
+            color: red;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            gap: 0.2rem;
+            width: 25rem;
+
+            input {
+                width: 25rem;
+                background-color: white;
+                padding: 5px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+            }
+        }
+
+        .messageInput {
+            border: 1px solid black;
+            width: 25rem;
+            height: 7rem;
+            padding: 5px;
+            outline: none;
+        }
+
+        .formTerm {
+            flex-direction: row;
+            width: 30rem;
+        }
+
+    }
+}

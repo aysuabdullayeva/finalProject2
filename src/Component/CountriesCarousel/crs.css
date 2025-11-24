@@ -1,0 +1,136 @@
+#app {
+  height: 100%;
+}
+
+.cntrycrs {
+  position: relative;
+  height: 100%;
+  margin: 30px 0 !important;
+}
+
+.cntrycrs {
+  background: #fff;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.news-card .heart {
+  content: "";
+  z-index: 99;
+  top: 20;
+  right: 55;
+  font-size: 25px;
+  color: black;
+  position: absolute;
+  transition: 0.5s;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.news-card .card {
+  content: "";
+  z-index: 99;
+  top: 20;
+  right: 20;
+  font-size: 25px;
+  color: black;
+  position: absolute;
+  transition: 0.5s;
+
+  &:hover {
+    color: red;
+  }
+}
+
+
+
+.news-card img {
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.news-card:hover img {
+  transform: scale(1.08);
+}
+
+.names {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  padding-top: 20px;
+}
+
+.dates {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.news-card button {
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  color: #ff6600;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.news-card button:hover {
+  color: #ff3300;
+}
+
+.swiper-pagination-bullet {
+  background: #ff6600 !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #ff3300 !important;
+}

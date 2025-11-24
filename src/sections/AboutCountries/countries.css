@@ -1,0 +1,12 @@
+.contentCntry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 180px;
+
+}
+
+.spanDiv{
+    width: 73%;
+    text-align: end;
+}

@@ -1,0 +1,55 @@
+.movement .plane-left {
+    width: 200px;
+    position: relative;
+    animation: flyLeft 6s ease-in-out infinite;
+}
+
+@keyframes flyLeft {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(-2deg);
+    }
+
+    25% {
+        transform: translateY(-10px) translateX(8px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(0px) translateX(0px) rotate(-2deg);
+    }
+
+    75% {
+        transform: translateY(10px) translateX(-8px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(-2deg);
+    }
+}
+
+.movement .plane-right {
+    width: 200px;
+    position: relative;
+    animation: flyRight 6s ease-in-out infinite;
+}
+
+@keyframes flyRight {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(2deg);
+    }
+
+    25% {
+        transform: translateY(10px) translateX(-8px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(0px) translateX(0px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-10px) translateX(8px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(2deg);
+    }
+}

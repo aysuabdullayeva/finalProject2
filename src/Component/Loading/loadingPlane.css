@@ -1,0 +1,32 @@
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #2a7fd9, #1b263b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.plane-icon {
+  font-size: 80px;
+  animation: spin 2s linear infinite;
+  color: #00bcd4;
+}
+
+@keyframes spin {
+  /* from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } */
+    0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
