@@ -1,29 +1,31 @@
 import * as Yup from "yup";
 
 export const formRegisterSchema = Yup.object().shape({
-  name: Yup.string().required("ad hissesini bosh saxlamayin"),
-  surname: Yup.string().required("soyad hissesini bosh saxlamayin"),
-  age: Yup.number("yasinizi reqem formatiinda daxil edin")
-    .integer("tam reqem daxil edin")
-    .positive("musbet reqem daxil edin")
-    .required("bosh saxlamayin"),
-  email: Yup.string().email("duzgun daxil edin").required("bosh saxlamayin"),
-  password: Yup.string().required("bosh saxlamayin"),
+  name: Yup.string().required("Please enter your first name"),
+  surname: Yup.string().required("Please enter your surname"),
+  age: Yup.number("Please enter your age in numeric format")
+    .integer("Please enter a whole number")
+    .positive("Please enter a positive number")
+    .required("Age is required"),
+  email: Yup.string()
+    .email("Please enter a valid email")
+    .required("Email is required"),
+  password: Yup.string().required("Password is required"),
   confirmPassword: Yup.string()
-    .required("bosh saxlamayin")
-    .oneOf([Yup.ref("password"), null], "passwordla eyni deyil"),
-  term: Yup.boolean().oneOf([true]),
+    .required("Please confirm your password")
+    .oneOf([Yup.ref("password"), null], "Passwords must match"),
+  term: Yup.boolean().oneOf([true], "You must accept the terms and conditions"),
 
-  // NEW FIELDS
-  arrived: Yup.string().required("Arrived bosh saxlamayin"),
-  date: Yup.date().required("Tarixi daxil edin"),
-  time: Yup.string().required("Saati daxil edin"),
+  // elave
+  arrived: Yup.string().required("Please enter arrival information"),
+  date: Yup.date().required("Please select a date"),
+  time: Yup.string().required("Please select a time"),
   phone: Yup.string()
-    .matches(/^[0-9]{10,15}$/, "Telefon duzgun formatda deyil")
-    .required("Telefon nomresini daxil edin"),
+    .matches(/^[0-9]{10,15}$/, "Please enter a valid phone number")
+    .required("Phone number is required"),
   guests: Yup.number()
-    .integer("Tam reqem daxil edin")
-    .positive("Musbet reqem daxil edin")
-    .required("Qonaq sayini daxil edin"),
-  message: Yup.string().max(500, "Mesaj max 500 simvol ola biler"),
+    .integer("Please enter a whole number")
+    .positive("Please enter a positive number")
+    .required("Please enter the number of guests"),
+  message: Yup.string().max(500, "Message can be up to 500 characters only"),
 });

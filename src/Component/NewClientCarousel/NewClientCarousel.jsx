@@ -13,7 +13,6 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          {/* 🌈 Animated Gradient Border */}
           <motion.div
             initial={{ opacity: 0, scale: 0.7, rotateX: -25, filter: "blur(10px)" }}
             animate={{ opacity: 1, scale: 1, rotateX: 0, filter: "blur(0px)" }}
@@ -25,7 +24,6 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
               overflow-hidden border border-white/20
             "
           >
-            {/* 🌟 Animated border effect */}
             <div className="absolute inset-0 rounded-3xl border-[3px] border-transparent animate-spin-slow pointer-events-none"
               style={{
                 background:
@@ -40,7 +38,6 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
 
             <div className="flex flex-col items-center text-center relative z-10">
 
-              {/* ✨ Avatar with Parallax */}
               <motion.img
                 src={experience.img}
                 whileHover={{ scale: 1.1, rotate: 2 }}
@@ -51,12 +48,10 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
                 "
               />
 
-              {/* ⭐ Name */}
               <h2 className="text-3xl font-bold !mb-2 drop-shadow-xl">
                 {experience.name}'s Experience
               </h2>
 
-              {/* ⭐ STAR RATING */}
               <div className="flex !gap-2 !mb-4">
                 {stars.map((_, idx) => (
                   <motion.span
@@ -76,7 +71,6 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
                 ))}
               </div>
 
-              {/* 🎖 GOLD BADGE */}
               <div
                 className="
                   !px-5 !py-2 !mb-4 rounded-full
@@ -87,12 +81,10 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
                 {experience.badge}
               </div>
 
-              {/* 📜 Details */}
               <p className="text-lg opacity-90 !mb-6 leading-relaxed">
                 {experience.details}
               </p>
 
-              {/* CLOSE BTN */}
               <motion.button
                 onClick={onClose}
                 whileHover={{ scale: 1.1 }}
@@ -112,7 +104,3 @@ const NewClientCarousel = ({ isOpen, onClose, experience }) => {
 };
 
 export default NewClientCarousel;
-
-
-
-

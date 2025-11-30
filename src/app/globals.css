@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
   list-style-type: none;
   text-decoration: none;
   box-sizing: border-box;
@@ -15,7 +15,6 @@ section{
 html {
   scroll-behavior: smooth;
   cursor: cell;
-  /* cursor: move; */
 }
 
 ::-webkit-scrollbar {
@@ -71,4 +70,11 @@ html {
   filter: blur(2px);
   opacity: 0.8;
   /* clip-path: polygon(0 15%, 10% 10%, 20% 20%, 30% 10%, 40% 20%, 50% 10%, 60% 20%, 70% 10%, 80% 20%, 90% 10%, 100% 15%, 100% 100%, 0 100%); */
+}
+
+
+/* responsive ucun */
+img {
+  max-width: 100%;
+  height: auto;
 }

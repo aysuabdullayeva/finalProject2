@@ -9,6 +9,7 @@
     width: 300px;
     height: 250px;
     border-radius: 30px;
+    flex-wrap: wrap;
 
     &:hover {
         img {
@@ -23,30 +24,70 @@
         border-radius: 30px;
         overflow: hidden;
     }
+
+
 }
 
-/* .mysection {
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 180px;
-}
+@media (max-width: 1024px) {
 
-.moving-bg {
-    background-color: aqua;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    z-index: 0;
-    animation: slideLeft 40s linear infinite;
-}
-
-@keyframes slideLeft {
-    0% {
-        transform: translateX(100%);
+    .travelHeader h2 {
+        font-size: 32px;
     }
 
-    100% {
-        transform: translateX(-100%);
+    .topBoxes,
+    .bottomBoxes {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-} */
+
+    .box {
+        width: 45%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .travelHeader h2 {
+        font-size: 28px;
+    }
+
+    .box {
+        width: 90%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .travelHeader h2 {
+        font-size: 22px;
+    }
+
+    .box {
+        width: 100%;
+        height: auto;
+    }
+
+    .stat-image {
+        height: auto;
+    }
+}
+
+@media (max-width: 370px) {
+    .travelHeader h2 {
+        font-size: 20px;
+    }
+
+    .box span {
+        font-size: 14px;
+    }
+
+    .font-bold {
+        font-size: 20px !important;
+        padding-bottom: 10px;
+    }
+}

@@ -41,7 +41,7 @@ const FormRegister = () => {
   });
 
   return (
-    <div className="planTrip !mt-55">
+    <div className="planTrip">
       <form className="planForm" onSubmit={handleSubmit}>
         <h1 className="!pt-5">Form</h1>
 
@@ -189,7 +189,6 @@ const FormRegister = () => {
         </div>
 
         <div className="form-item messageInput">
-          {/* <label htmlFor="message">Message</label> */}
           <textarea
             className="outline-none"
             onChange={handleChange}
@@ -204,7 +203,7 @@ const FormRegister = () => {
 
         <div className="form-item formTerm">
           <input
-            className="w-[20px] h-[20px] cursor-pointer"
+            className="checkBox w-[20px] h-[20px] cursor-pointer"
             onChange={handleChange}
             checked={values.term}
             id="term"

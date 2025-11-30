@@ -3,10 +3,62 @@
     justify-content: center;
     align-items: center;
     gap: 180px;
-
 }
 
 .spanDiv{
     width: 73%;
     text-align: end;
+}
+
+@media (max-width: 1024px) {
+    .contentCntry {
+        gap: 100px;
+    }
+
+    .spanDiv {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentCntry {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .spanDiv {
+        width: 100%;
+        text-align: center;
+    }
+
+    .countryHeader h2 {
+        font-size: 32px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .countryHeader h2 {
+        font-size: 26px !important;
+    }
+
+    .spanDiv span {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 370px) {
+    .countryHeader h2 {
+        font-size: 22px !important;
+    }
+
+    .spanDiv span {
+        font-size: 15px;
+    }
+
+    .contentCntry {
+        gap: 20px;
+    }
 }

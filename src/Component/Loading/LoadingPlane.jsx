@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { FaPlane } from "react-icons/fa";
-import "./loadingPlane.css"; // bu faylı da eyni qovluqda saxla: src/components/loading.css
+import "./loadingPlane.css";
 
 const LoadingPlane = ({ children }) => {
   const [loading, setLoading] = useState(true);

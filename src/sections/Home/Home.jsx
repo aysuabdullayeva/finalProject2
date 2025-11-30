@@ -9,25 +9,27 @@ import "./home.css";
 import { FaCaretDown } from "react-icons/fa";
 
 export default function Section() {
-  // home search form
   const [openModal, setOpenModal] = useState(false);
   const [openActive, setOpenActive] = useState(false);
   const [openDay, setOpenDay] = useState(false);
   const [openTraveller, setOpenTraveller] = useState(false);
 
-  const toggleModal = () => {
-    setOpenModal((prev) => !prev);
-  };
-  const toggleActive = () => {
-    setOpenActive((prev) => !prev);
-  };
+  const [location, setLocation] = useState("");
+  const [activity, setActivity] = useState("");
+  const [day, setDay] = useState("");
+  const [traveller, setTraveller] = useState("");
 
-  const toggleOpen = () => {
-    setOpenDay((prev) => !prev);
-  };
+  const toggleModal = () => setOpenModal((prev) => !prev);
+  const toggleActive = () => setOpenActive((prev) => !prev);
+  const toggleOpen = () => setOpenDay((prev) => !prev);
+  const toggleTraveller = () => setOpenTraveller((prev) => !prev);
 
-  const toggleTraveller = () => {
-    setOpenTraveller((prev) => !prev);
+  // bax
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { location, activity, day, traveller };
+    localStorage.setItem("travelSearch", JSON.stringify(data));
+    alert("Thank You. Form submitted successfully !");
   };
 
   return (
@@ -36,10 +38,10 @@ export default function Section() {
         <div className="homeText">
           <h2>Take the Scenic Route</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ea
-            adipisci ex dolor voluptate eius sit! Natus in, ab voluptates,
-            maxime non tenetur corporis sequi, doloremque fugit expedita
-            distinctio et.
+            The world is full of magic for those who wander. Explore
+            breathtaking landscapes, taste new cultures, and collect moments
+            that become memories. Start your journey with us and see the beauty
+            waiting beyond the horizon.
           </p>
         </div>
 
@@ -55,112 +57,151 @@ export default function Section() {
             }}
             loop={true}
           >
-            <SwiperSlide>
-              <div className="slideBox">
-                <img
-                  src="https://i.pinimg.com/1200x/63/b5/01/63b501613f667796c3f70ce176a2d874.jpg"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slideBox">
-                <img
-                  src="https://i.pinimg.com/1200x/be/45/e3/be45e368aa6d389f7ae6d6c467e268fd.jpg"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slideBox">
-                <img
-                  src="https://i.pinimg.com/1200x/3d/43/94/3d4394e16eb27eef2c0441ea837d91e2.jpg"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="slideBox">
-                <img
-                  src="https://i.pinimg.com/1200x/3a/24/cd/3a24cdf489959d461b751f03fbc6f30e.jpg"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="slideBox">
-                <img
-                  src="https://i.pinimg.com/736x/36/04/7f/36047f6907a89044b3641a69f268feda.jpg"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
+            {[
+              "https://i.pinimg.com/1200x/63/b5/01/63b501613f667796c3f70ce176a2d874.jpg",
+              "https://i.pinimg.com/1200x/be/45/e3/be45e368aa6d389f7ae6d6c467e268fd.jpg",
+              "https://i.pinimg.com/1200x/3d/43/94/3d4394e16eb27eef2c0441ea837d91e2.jpg",
+              "https://i.pinimg.com/1200x/3a/24/cd/3a24cdf489959d461b751f03fbc6f30e.jpg",
+              "https://i.pinimg.com/736x/36/04/7f/36047f6907a89044b3641a69f268feda.jpg",
+            ].map((src, i) => (
+              <SwiperSlide key={i}>
+                <div className="slideBox">
+                  <img src={src} alt="" />
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
 
-      <form className="homeForm" action="">
-        <div className="inp">
-          <input className="homeInput" type="text" />
-        </div>
-
-        <div className="buttonDiv">
-          <div>
-            <button type="button" className="homeBtn flex items-center gap-2">
-              Location <FaCaretDown onClick={toggleModal} />
+      <form className="homeForm relative" onSubmit={handleSubmit}>
+        <div className="buttonDiv flex items-center gap-6">
+          <div className="relative">
+            <button
+              onClick={toggleModal}
+              type="button"
+              className="homeBtn flex items-center gap-2"
+            >
+              {location || "Location"} <FaCaretDown />
             </button>
+
             {openModal && (
               <div className="buttonModal">
-                <button type="button">Paris</button>
-                <button>London</button>
-                <button>Paris</button>
+                {["Hamburg", "Bali", "New York", "Colmar"].map(
+                  (item) => (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => {
+                        setLocation(item);
+                        setOpenModal(false);
+                      }}
+                    >
+                      {item}
+                    </button>
+                  )
+                )}
               </div>
             )}
           </div>
 
           <div className="relative">
-            <button type="button" className="homeBtn flex items-center gap-2">
-              Activity Type <FaCaretDown onClick={toggleActive} />
+            <button
+              onClick={toggleActive}
+              type="button"
+              className="homeBtn flex items-center gap-2"
+            >
+              {activity || "Activity Type"} <FaCaretDown />
             </button>
+
             {openActive && (
               <div className="buttonModal">
-                <button>Paris</button>
-                <button>London</button>
-                <button>Paris</button>
+                {[
+                  "Fishing",
+                  "Swimming",
+                  "Road Cycling",
+                  "Snowboarding",
+                ].map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => {
+                      setActivity(item);
+                      setOpenActive(false);
+                    }}
+                  >
+                    {item}
+                  </button>
+                ))}
               </div>
             )}
           </div>
 
           <div className="relative">
-            <button type="button" className="homeBtn flex items-center gap-2">
-              Activity Day <FaCaretDown onClick={toggleOpen} />
+            <button
+              onClick={toggleOpen}
+              type="button"
+              className="homeBtn flex items-center gap-2"
+            >
+              {day || "Activity Day"} <FaCaretDown />
             </button>
+
             {openDay && (
               <div className="buttonModal">
-                <button>Paris</button>
-                <button>London</button>
-                <button>Paris</button>
+                {["3 Days", "7 Days",  "15 Days", "30 Days"].map(
+                  (item) => (
+                    <button
+                      key={item}
+                      type="button"
+                      onClick={() => {
+                        setDay(item);
+                        setOpenDay(false);
+                      }}
+                    >
+                      {item}
+                    </button>
+                  )
+                )}
               </div>
             )}
           </div>
 
           <div className="relative">
-            <button type="button" className="homeBtn flex items-center gap-2">
-              Traveller <FaCaretDown onClick={toggleTraveller} />
+            <button
+              onClick={toggleTraveller}
+              type="button"
+              className="homeBtn flex items-center gap-2"
+            >
+              {traveller || "Traveller"} <FaCaretDown />
             </button>
+
             {openTraveller && (
               <div className="buttonModal">
-                <button>Paris</button>
-                <button>London</button>
-                <button>Paris</button>
+                {[
+                  "Tourist",
+                  "Visitor",
+                  "Backpacker",
+                  "Solo traveler",
+                ].map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => {
+                      setTraveller(item);
+                      setOpenTraveller(false);
+                    }}
+                  >
+                    {item}
+                  </button>
+                ))}
               </div>
             )}
           </div>
 
-          <button className="srchBtn w-[100px] bg-orange-500 rounded-3xl !p-2 text-white cursor-pointer">
+          <button
+            type="submit"
+            className="srchBtn w-[100px] bg-orange-500 rounded-3xl !p-2 text-white cursor-pointer"
+          >
             Search
           </button>
         </div>

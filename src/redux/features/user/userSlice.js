@@ -1,56 +1,53 @@
-// import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-// import axios from 'axios';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-// const initialState = {
-//     person: null,
-//     users: []
-// }
+const initialState = {
+  users: [],
+  person: null,
+};
 
-// export const getUser = createAsyncThunk("getUser", async () => {
-//     try {
-//         let { data } = await axios.get("https://691c726e3aaeed735c90e303.mockapi.io/persondata")
-//         return data;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// })
+export const getUser = createAsyncThunk("getUser", async () => {
+  try {
+    const { data } = await axios.get(
+      "https://691e052bbb52a1db22bcccc3.mockapi.io/searchinput/testsearch"
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+});
 
-// export const userSlice = createSlice({
-//     name: 'user',
-//     initialState: {
-//         users: [],
-//         loading: false
-//     },
-//     reducers: {
-//         getCheckLogin: (state, action) => {
-//             let userfind = state.users.find(
-//                 (item) => item.email == action.payload.email && item.password == action.payload.password
-//             );
+export const createUser = createAsyncThunk("createUser", async (newUser) => {
+  try {
+    const { data } = await axios.post(
+      "https://691e052bbb52a1db22bcccc3.mockapi.io/searchinput/testsearch",
+      newUser
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+});
 
-//             console.log(userfind);
-//             if (userfind) {
-//                 let user = JSON.parse(localStorage.getItem("user")) || {};
-//                 if (user) {
-//                     user = userfind;
-//                     localStorage.setItem("user", JSON.stringify(user))
-//                    state.person=user
-//                     console.log(userfind);
-//                 }
+export const userSlice = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    setPerson: (state, action) => {
+      state.person = action.payload;
+    },
+  },
 
-//                 window.location.href = "/";
-//             } else {
-//                 alert("didn't find user, please check again your information ");
-//             }
-//         }
+  extraReducers: (builder) => {
+    builder.addCase(getUser.fulfilled, (state, action) => {
+      state.users = action.payload;
+    });
 
-//     },
+    builder.addCase(createUser.fulfilled, (state, action) => {
+      state.users.push(action.payload); 
+    });
+  },
+});
 
-//     extraReducers: (builder) => {
-//         builder.addCase(getUser.fulfilled, (state, action) => {
-//             state.users = action.payload
-//         })
-//     }
-// })
-
-// export const { getCheckLogin } = userSlice.actions
-// export default userSlice.reducer
+export const { setPerson } = userSlice.actions;
+export default userSlice.reducer;

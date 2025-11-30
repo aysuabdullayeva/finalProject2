@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -70,6 +69,16 @@ export default function CarouselBackground({ openModal }) {
       perView: 3,
       spacing: 15,
     },
+ 
+    breakpoints: {
+    "(max-width: 1024px)": {
+      slides: { perView: 2, spacing: 15 },
+    },
+    "(max-width: 768px)": {
+      slides: { perView: 1, spacing: 15 },
+    },
+
+  },
   });
 
   return (

@@ -12,7 +12,7 @@ const Page = () => {
     const getApi = async () => {
       try {
         const response = await axios.get(
-          `https://691357a4f34a2ff1170ba1d8.mockapi.io/detail/${id}`
+          "https://691357a4f34a2ff1170ba1d8.mockapi.io/detail"
         );
         setAllData(response.data);
       } catch (error) {

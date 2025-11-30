@@ -1,8 +1,9 @@
 "use client";
+
 import BookBtn from "@/Component/BookBtn/BookBtn";
 import CntryCrs from "@/Component/CountriesCarousel/CntryCrs";
 import React from "react";
-import "./countries.css"
+import "./countries.css";
 
 const Countries = () => {
   return (
@@ -27,8 +28,8 @@ const Countries = () => {
               <BookBtn />
             </div>
           </div>
-
         </div>
+
         <CntryCrs />
       </div>
     </section>

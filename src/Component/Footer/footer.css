@@ -5,6 +5,7 @@ footer {
 .firstFooter {
     margin: 0 auto;
     padding: 30px 0;
+    flex-wrap: wrap;
 }
 
 .footerIcons .icons svg {
@@ -43,6 +44,7 @@ footer {
     justify-content: space-between;
     align-items: start;
     padding: 30px 0;
+    flex-wrap: wrap;
 }
 
 .aboutTravel p {
@@ -69,7 +71,8 @@ footer {
         color: rgb(189, 50, 115);
     }
 }
-.khan{
+
+.khan {
     color: #07497A;
 }
 
@@ -83,4 +86,100 @@ footer {
     margin: 0 auto;
     padding: 30px 0;
     border-top: 1.5px solid #07497A;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .firstFooter {
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footerNewsletter form input {
+        width: 250px !important;
+    }
+
+    .footerContainer>div {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footerNewsletter form input {
+        width: 150px !important;
+    }
+
+    .firstFooter {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footerContainer>div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footerContainer .contacts,
+    .location,
+    .call,
+    .email {
+        justify-content: center;
+        align-items: start;
+    }
+
+    .aboutTravel p {
+        margin: 0 auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .footerNewsletter form input {
+        width: 150px !important;
+    }
+
+    .firstFooter {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footerIcons .icons {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 370px) {
+    footer {
+        margin: 0 auto;
+    }
+
+    .firstFooter {
+        margin-right: 30px;
+    }
+
+    .footerNewsletter form {
+        display: flex !important;
+        gap: 5px;
+    }
+
+    .footerNewsletter form {
+        width: 50% !important;
+        margin: 0 auto;
+        font-size: 10px;
+        padding: 0;
+    }
+
+    .footerNewsletter form .footBtn {
+        width: 50px !important;
+        height: 100% !important;
+    }
 }

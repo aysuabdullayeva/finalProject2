@@ -1,63 +1,196 @@
 .planTrip {
-    /* background-color: black; */
     margin-bottom: 28px;
-    
-    .planForm {
-        background: linear-gradient(0deg, #ff7e5f, #feb47b);
-        color: black;
-        width: 50%;
-        margin: auto;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    font-family: 'Arial', sans-serif;
+}
 
-        label:hover {
-            cursor: pointer;
-        }
+.planTrip .planForm {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: black;
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 
-        h1 {
-            text-align: center;
-            font-weight: bold;
-            font-size: 30px;
-            text-transform: uppercase;
-        }
+.planTrip .planForm h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
 
-        .error-title {
-            color: red;
-            font-weight: bold;
-            width: 100%;
-        }
+.planTrip .planForm label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
 
-        .form-item {
-            display: flex;
-            flex-direction: column;
-            margin: 10px 0;
-            gap: 0.2rem;
-            width: 25rem;
+.planTrip .planForm label:hover {
+    cursor: pointer;
+}
 
-            input {
-                width: 25rem;
-                background-color: white;
-                padding: 5px;
-                border-radius: 5px;
-                outline: none;
-                border: none;
-            }
-        }
+.planTrip .planForm .form-item {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+    gap: 0.3rem;
+    width: 100%;
+    max-width: 25rem;
+}
 
-        .messageInput {
-            border: 1px solid black;
-            width: 25rem;
-            height: 7rem;
-            padding: 5px;
-            outline: none;
-        }
+.planTrip .planForm .form-item input,
+.planTrip .planForm .form-item textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
 
-        .formTerm {
-            flex-direction: row;
-            width: 30rem;
-        }
+.planTrip .planForm .form-item input:focus,
+.planTrip .planForm .form-item textarea:focus {
+    border-color: #ff7e5f;
+    box-shadow: 0 0 5px rgba(255, 126, 95, 0.6);
+}
 
+.planTrip .planForm .error-title {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.planTrip .planForm .messageInput textarea {
+    height: 7rem;
+    resize: none;
+}
+
+.planTrip .planForm .formTerm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    /* max-width: 30rem; */
+    margin-top: 15px;
+
+}
+
+.planTrip .planForm .formTerm input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #ff7e5f;
+}
+
+.planTrip .planForm .formTerm label {
+    font-size: 14px;
+}
+
+.planTrip .planForm .formTerm a {
+    color: #d62727;
+    text-decoration: underline;
+}
+
+.planTrip .planForm input[type="submit"] {
+    width: 50%;
+    padding: 12px 0;
+    margin-top: 20px;
+    background-color: black;
+    color: #ffa500;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.planTrip .planForm input[type="submit"]:hover {
+    background-color: #28a745;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 1024px) {
+    .planTrip .planForm {
+        width: 70%;
+        padding: 25px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .planTrip .planForm {
+        width: 85%;
+        padding: 20px 10px;
+    }
+
+    .planTrip .planForm h1 {
+        font-size: 28px;
+    }
+
+    .planTrip .planForm .form-item input,
+    .planTrip .planForm .form-item textarea {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .planTrip .planForm input[type="submit"] {
+        width: 60%;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .planTrip .planForm {
+        width: 95%;
+        padding: 15px 10px;
+    }
+
+    .planTrip .planForm h1 {
+        font-size: 24px;
+    }
+
+    .planTrip .planForm .form-item input,
+    .planTrip .planForm .form-item textarea {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .planTrip .planForm input[type="submit"] {
+        width: 70%;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 370px) {
+    .planTrip .planForm {
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .planTrip .planForm h1 {
+        font-size: 20px;
+    }
+
+    .planTrip .planForm .form-item input,
+    .planTrip .planForm .form-item textarea {
+        font-size: 13px;
+        padding: 5px;
+    }
+
+    .planTrip .planForm input[type="submit"] {
+        width: 80%;
+        padding: 6px 0;
+    }
+
+    .planTrip .planForm .formTerm label {
+        font-size: 12px;
     }
 }

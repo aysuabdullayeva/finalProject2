@@ -67,7 +67,7 @@ const Travel = () => {
             Travel Highlights & Stats
           </h2>
         </div>
-        <div className=" w-[92%] text-end !mb-10">
+        <div className="btn w-[92%] text-end !mb-10">
           {" "}
           <BookBtn />
         </div>
@@ -130,17 +130,6 @@ const Travel = () => {
             </div>
           </div>
         </div>
-
-        {/* <img
-          className="moving-bg h-[150px]"
-          src="https://themes.webswaala.com/CMS/WW80/wp-content/uploads/2024/08/backgrond-img.png"
-          alt=""
-        />
-        <img
-          className="moving-bg h-[150px]"
-          src="https://themes.webswaala.com/CMS/WW80/wp-content/uploads/2024/08/backgrond-img.png"
-          alt=""
-        /> */}
       </div>
     </section>
   );

@@ -53,7 +53,6 @@ const page = () => {
           </div>
         </div>
 
-        {/* Right: Form */}
         <div className="!p-8 !lg:p-12">
           <motion.div
             initial={{ x: 10, opacity: 0 }}
@@ -77,7 +76,7 @@ const page = () => {
                 const email = form.email.value;
                 const topic = form.topic.value;
                 const message = form.message.value;
-                //  baxx
+                //  Aysu bax
                 const mailto = `mailto:support@travelco.com?subject=${encodeURIComponent(
                   topic + " — " + name
                 )}&body=${encodeURIComponent(

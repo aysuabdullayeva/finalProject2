@@ -82,11 +82,11 @@ const Footer = () => {
         <div className="destionations">
           <h2 className="font-semibold text-[20px]">Destination</h2>
           <div className="dests flex flex-col text-[17px] opacity-[0.7]">
-            <Link href={"/"}>South America</Link>
-            <Link href={"/"}>Middle East</Link>
-            <Link href={"/"}>San Franc Rica</Link>
-            <Link href={"/"}>New York</Link>
-            <Link href={"/"}>Tokyo</Link>
+            <Link href={"/travel/1"}>Germany</Link>
+            <Link href={"/travel/2"}>Indonesia</Link>
+            <Link href={"/travel/3"}>North America</Link>
+            <Link href={"/travel/4"}>France</Link>
+            <Link href={"/travel/5"}>Italy</Link>
           </div>
         </div>
 

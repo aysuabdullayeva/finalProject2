@@ -1,0 +1,103 @@
+@media (max-width: 1024px) {
+
+    .aboutContent,
+    .placesContent p,
+    .hotelsContent>div {
+        width: 60%;
+    }
+
+    .maincontent img,
+    .placesContent img,
+    .hotelsContent img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .backBtn {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .maincontent,
+    .placesContent,
+    .hotelsContent {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutContent,
+    .placesContent p,
+    .hotelsContent>div {
+        width: 90%;
+    }
+
+    .maincontent img,
+    .placesContent img,
+    .hotelsContent img {
+        width: 90%;
+        height: auto;
+    }
+
+    .backBtn {
+        gap: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .aboutContent,
+    .placesContent p,
+    .hotelsContent>div {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .maincontent img,
+    .placesContent img,
+    .hotelsContent img {
+        width: 100%;
+        height: auto;
+    }
+
+    .backBtn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 3px;
+    }
+
+    .backBtn svg {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .aboutContent,
+    .placesContent p,
+    .hotelsContent>div {
+        font-size: 15px !important;
+    }
+
+    .toptik {
+        font-size: 25px;
+    }
+
+    .dateComment {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    .backText {
+        width: 100%;
+        font-size: 13px;
+    }
+
+}

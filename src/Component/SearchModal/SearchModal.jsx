@@ -7,13 +7,23 @@ import Link from "next/link";
 
 const SearchModal = ({ isOpen, onClose }) => {
   const [placeholder, setPlaceholder] = useState("Enter a product name");
-  const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://691c726e3aaeed735c90e303.mockapi.io/persondata")
-      .then((res) => setData(res.data));
+    const getData = async () => {
+      try {
+        const result = await axios.get(
+          "https://691c726e3aaeed735c90e303.mockapi.io/persondata"
+        );
+        setData(result.data);
+       
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
   }, []);
 
   const result = data.filter((item) =>
@@ -33,15 +43,14 @@ const SearchModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="general bg-white p-4 rounded-lg w-[50%] relative">
+    <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+      <div className="general p-5 rounded-lg w-[80%] relative">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-black"
+          className="absolute top-7 right-7 text-white hover:text-black"
         >
           <X size={24} />
         </button>
-
         <input
           type="text"
           value={search}
@@ -52,29 +61,26 @@ const SearchModal = ({ isOpen, onClose }) => {
           className="w-full !px-2 !py-2 outline-none border rounded"
         />
 
-        <div className="boxes">
+        <div className="boxes !w-[1100px] m-auto">
           {result.length > 0 ? (
             result.map((item) => (
               <div
                 key={item.id}
-                className=" p-2 border-b text-sm hover:bg-gray-100 cursor-pointer"
+                className=" text-sm hover:bg-gray-100 cursor-pointer"
               >
-
-                <div className="allBoxes">
-                  <div className="boxesCard">
-                    <img src={item?.image} alt="" />
-                    {item?.name}
-                    {item?.title}
-                    {item?.price}
-                    <Link href={`/search/${item.id}`}>
-                      <button className="!p-3 cursor-pointer text-white bg-black !m-3 rounded-3xl duration-500 hover:bg-white hover:text-black hover:border-[1px]">
-                        Learn More...
-                      </button>
-                    </Link>
+                <div className="boxesCard">
+                  <img src={item?.image} alt="" />
+                  <div className="boxDatas">
+                    <div className="itemName">{item?.name}</div>
+                    <div className="itemTitle">{item?.title}</div>
+                    <div className="itemPrice">{item?.price}</div>
                   </div>
+                  <Link  href={`/search/${item.id}`}>
+                    <button type="button" className="learnMoreBtn" onClick={onClose}>
+                      Learn More...
+                    </button>
+                  </Link>
                 </div>
-
-
               </div>
             ))
           ) : (

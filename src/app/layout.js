@@ -24,19 +24,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
   return (
-    // <ReduxProvider>
     <html lang="en">
       <body
         className={`flex flex-col justify-between h-[100vh] ${geistSans.variable} ${geistMono.variable} antialiased`}
         cz-shortcut-listen="true"
-      >
+        >
+        <ReduxProvider>
         <Header />
-        {/* <LoadingPlane> */}
+        <LoadingPlane>
           {children}
-          {/* </LoadingPlane> */}
+          </LoadingPlane>
         <Footer />
+      </ReduxProvider>
       </body>
     </html>
-    // </ReduxProvider>
   );
 };

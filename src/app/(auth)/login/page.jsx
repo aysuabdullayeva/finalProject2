@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div className="m-5 flex flex-col justify-between h-full">
       <Auth />
     </div>
   );

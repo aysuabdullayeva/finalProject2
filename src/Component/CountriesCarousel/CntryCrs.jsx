@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -27,7 +28,6 @@ export default function CntryCrs() {
         console.log(error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -45,36 +45,54 @@ export default function CntryCrs() {
     alert("Success! You've added this package to your wishlist!");
   };
 
-
   // carda elave etmek ve countu deyismek
   const addToCard = (item) => {
     const card = JSON.parse(localStorage.getItem("card")) || [];
     const exist = card.find((p) => p.id === item.id);
-
     if (exist) {
       alert("You’ve already saved this gem! No need to duplicate!");
       return;
     }
-
     card.push(item);
     localStorage.setItem("card", JSON.stringify(card));
     window.dispatchEvent(new Event("cardChanged"));
-    alert("Nice choice! This package is safely tucked away for later! ");
+    alert("Nice choice! This package is safely tucked away for later!");
   };
 
   return (
     <div className="cntrycrs">
       <Swiper
-  slidesPerView={3}
-  spaceBetween={30}
-  freeMode={true}
-  loop={true}
-  autoplay={{
-    delay: 3000,
-    disableOnInteraction: false,
-  }}
-  modules={[FreeMode, Pagination, Autoplay]}
-  className="mySwiper"
+        key={news.length}
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        observer={true}
+        observeParents={true}
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+          300: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+        }}
+        modules={[FreeMode, Pagination, Autoplay]}
+        className="mySwiper"
       >
         {news.map((item) => (
           <SwiperSlide key={item.id}>

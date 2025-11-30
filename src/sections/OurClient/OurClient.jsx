@@ -65,7 +65,6 @@ const OurClient = () => {
               alt=""
             />
 
-            {/* Karusel */}
             <CarouselApp openModal={openModal} />
             <img
               className="plane-right"
@@ -76,7 +75,6 @@ const OurClient = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <NewClientCarousel
         isOpen={open}
         onClose={() => setOpen(false)}
@@ -87,6 +85,3 @@ const OurClient = () => {
 };
 
 export default OurClient;
-
-
-
